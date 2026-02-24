@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Galería - Vectorización</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="imagenes/logo.png">
+<style>
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* HERO PEQUEÑO */
+.hero-galeria {
+    height: 50vh;
+    background:
+    linear-gradient(rgba(0, 0, 0, 0.269), rgba(0, 0, 0, 0.333)),
+    url("imagenes/fondo1.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+}
+
+.hero-galeria h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: clamp(2.5rem, 8vw, 6rem);
+    text-shadow: 3px 3px 20px rgba(0,0,0,0.5);
+}
+
+/* GALERIA */
+.galeria {
+    padding: 100px 20px;
+    background: #242730;
+}
+
+.galeria-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* IMAGENES */
+.galeria-grid img {
+    width: 100%;
+    height: auto;              /* 👈 quitamos el alto fijo */
+    border-radius: 20px;
+    transition: 0.4s ease;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+}
+
+.galeria-grid img:hover {
+    transform: scale(1.05);
+}
+
+/* VIDEOS */
+.media-box {
+    width: 100%;
+    height: 300px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+}
+
+.media-box video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* BOTON VOLVER */
+.volver {
+    text-align: center;
+    margin-top: 60px;
+}
+
+.btn-volver {
+    padding: 12px 35px;
+    background-color: #3b2a26;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
+.btn-volver:hover {
+    background-color: #351702;
+    transform: scale(1.05);
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .galeria-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .galeria-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<section class="hero-galeria">
+    <h1>Vectorización</h1>
+</section>
+
+<section class="galeria">
+    <div class="galeria-grid">
+
+        <!-- VIDEOS -->
+         <div class="media-box">
+        <video controls>
+            <source src="videos/video 1.mp4" type="video/mp4">
+        </video>
+</div>
+                <!-- IMAGENES -->
+        <img src="imagenes/b.png" alt="">
+
+        <img src="imagenes/a.jpeg" alt="">
+    </div>
+
+    <div class="volver">
+        <a href="index.html" class="btn-volver">Volver al inicio</a>
+    </div>
+</section>
+
+</body>
+</html>

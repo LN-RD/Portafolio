@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sobre mi</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="imagenes/logo.png">
+<style>
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* HERO PEQUEÑO */
+.hero-galeria {
+    height: 50vh;
+    background:
+    linear-gradient(rgba(0, 0, 0, 0.21), rgba(0,0,0,0.5)),
+    url("imagenes/fondo2.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+}
+
+.hero-galeria h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: clamp(2.5rem, 8vw, 6rem);
+    text-shadow: 3px 3px 20px rgba(0,0,0,0.5);
+}
+
+/* GALERIA / BLOG */
+.galeria {
+    padding: 30px 20px;
+    background: #2b0003;
+}
+
+.galeria-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* BLOG POST */
+.blog-post {
+    background-color: #760e0e;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    transition: 0.3s ease;
+}
+
+.blog-post img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.blog-text {
+    padding: 20px;
+    color: rgb(255, 255, 255);
+}
+
+.blog-text h2 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.blog-text p {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.blog-post:hover {
+    transform: scale(1.02);
+}
+
+/* BOTON VOLVER */
+.volver {
+    text-align: center;
+    margin-top: 60px;
+}
+
+.btn-volver {
+    padding: 12px 35px;
+    background-color: #3b2a26;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
+.btn-volver:hover {
+    background-color: #351702;
+    transform: scale(1.05);
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .galeria-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<section class="hero-galeria">
+    <h1>hola, soy Lindsay Nicole Rios Diaz</h1>
+</section>
+
+<section class="galeria">
+    <div class="galeria-grid">
+
+        <!-- SOBRE MI -->
+        <div class="blog-post">
+            <img src="imagenes/yo.jpeg" alt="Foto de Nico">
+            <div class="blog-text">
+                <h2>Sobre mi</h2>
+                <p>
+Tengo 18 años y soy muy creativa. Me encanta aprender y experimentar con todo lo que
+ me permita expresarme. Trabajo con mi hermana en una agencia de marketing 
+ para costear mis estudios y siempre estoy en constante aprendizaje. 
+ Hice mi portafolio con ayuda de inteligencia artificial, 
+y me encantaría trabajar de lo que me gusta para apoyar en casa y darme mis gustitos.
+                </p>
+            </div>
+        </div>
+
+        <!-- ESTUDIOS ANTERIORES -->
+        <div class="blog-post">
+            <img src="imagenes/col.jpeg" alt="Mi escuela">
+            <div class="blog-text">
+                <h2>Dónde estudié</h2>
+                <p>
+                    En este establecimiento estudié Ciencias y Letras, donde tuve una pequeña introducción a 
+                    lo que eran los sistemas y también hice un curso de fotografía que me permitió explorar 
+                    mi lado creativo. Me gradué en 2025 en el Hotel Camino Real,
+                     y esa etapa me enseñó mucho sobre disciplina y seguir mis intereses.
+                </p>
+            </div>
+        </div>
+
+        <!-- UNIVERSIDAD ACTUAL -->
+        <div class="blog-post">
+            <img src="imagenes/U.jpeg" alt="Mi universidad">
+            <div class="blog-text">
+                <h2>Universidad</h2>
+                <p>
+                    En este establecimiento estudio Ciencias de la Comunicación con énfasis en Publicidad. 
+                    La verdad decidí seguir esta carrera porque me llamaba mucho la atención todo lo que aprendía; 
+                    ¡me encantan las clases! Cada curso me motiva a explorar mi creatividad y 
+                    a seguir aprendiendo cosas nuevas en el mundo de la comunicación y la publicidad.
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="volver">
+        <a href="index.html" class="btn-volver">Volver al inicio</a>
+    </div>
+</section>
+
+</body>
+</html>

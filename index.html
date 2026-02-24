@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mi Portafolio</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="icon" type="image/png" href="imagenes/logo.png">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+<style>
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* HERO */
+.hero {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+/* VIDEO */
+.video-bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    z-index: -2;
+}
+
+/* OVERLAY CAFÉ (tu color encima del video) */
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: #00000063; 
+    z-index: -1;
+}
+
+.hero-content h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: clamp(3rem, 20vw, 20rem);
+    text-shadow: 3px 3px 20px rgba(0,0,0,0.5);
+    margin-bottom: 10px;
+}
+.hero-content h2 {
+    font-size: 1.5rem;
+    font-weight: 300;
+    letter-spacing: 4px;
+}
+/* PROYECTO DESTACADO */
+.proyecto-destacado {
+    padding: 20px 20px;
+       background: 
+linear-gradient(rgba(0, 0, 0, 0.075), rgba(0, 0, 0, 0.075)),
+url("imagenes/fondo3.jpg");
+
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+}
+
+.proyecto-contenedor {
+    display: flex;
+    gap: 60px;
+    max-width: 1100px;
+    margin: auto;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.proyecto-imagen img {
+    width: 500px;
+    max-width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+    transition: 0.5s;
+}
+
+.proyecto-imagen img:hover {
+    transform: scale(1.05);
+}
+
+.proyecto-texto {
+    max-width: 500px;
+    color: #000000;
+
+    background-color: rgba(255, 255, 255, 0.68);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+.proyecto-texto h3 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.proyecto-texto p {
+    line-height: 1.7;
+    font-size: 1.1rem;
+}
+
+.btn-proyecto {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 12px 35px;
+    background-color: #000000;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
+.btn-proyecto:hover {
+    background-color: #424242;
+    transform: translateY(-3px);
+}
+
+/* FONDO PARA ESTA NUEVA SECCIÓN */
+.proyecto-invertido {
+    background: #e3e2e1 !important;
+}
+
+/* INVERTIR ORDEN */
+.proyecto-invertido .proyecto-contenedor {
+    flex-direction: row-reverse;
+}
+
+.proyecto-fondo-repetido {
+    background: 
+    linear-gradient(rgba(0, 0, 0, 0.075), rgba(0, 0, 0, 0.021)),
+    url("imagenes/fondo3.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* CONTACTO FINAL */
+.contacto-final {
+    background-color: #393838;
+    padding: 30px 20px;
+    text-align: center;
+    color: white;
+}
+
+.contacto-contenedor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    flex-wrap: wrap;
+}
+
+/* TÍTULO */
+.contacto-final h2 {
+    font-size: clamp(2rem, 6vw, 4rem);
+    letter-spacing: 4px;
+}
+
+/* ICONOS */
+.contacto-iconos a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 80px;
+    border: 2px solid white;
+    border-radius: 50%;
+    color: white;
+    font-size: 35px;
+    margin: 0 10px;
+    transition: all 0.4s ease;
+}
+
+/* Animación bonita */
+.contacto-iconos a:hover {
+    background-color: white;
+    color: #3b2a26;
+    transform: translateY(-8px) scale(1.1);
+    box-shadow: 0 15px 25px rgba(0,0,0,0.3);
+}
+
+/* TEXTO EXTRA */
+.contacto-extra {
+    margin-top: 60px;
+}
+
+.contacto-extra p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+
+/* BOTÓN */
+.btn-contacto {
+    display: inline-block;
+    padding: 12px 35px;
+    background-color: white;
+    color: #3b2a26;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
+.btn-contacto:hover {
+    background-color: #321407;
+    color: white;
+    transform: scale(1.05);
+}
+</style>
+</head>
+
+<body>
+
+<main>
+
+<!-- HERO -->
+<section id="inicio" class="hero">
+
+     <video autoplay muted loop playsinline class="video-bg">
+        <source src="videos/fondo.mp4" type="video/mp4">
+    </video>
+
+    <div class="hero-content">
+        <h1>Portafolio</h1>
+        <h3>Lindsay Rios</h3>
+        <h4>Diseñadora Digital | Branding & Social Media</h4>
+    </div>
+</section>
+
+<!-- PROYECTO DESTACADO -->
+<section class="proyecto-destacado">
+
+    <div class="proyecto-contenedor">
+
+        <div class="proyecto-imagen">
+            <img src="imagenes/TRABAJO 1.png" alt="Trabajo destacado">
+        </div>
+
+        <div class="proyecto-texto">
+            <h3>VECTORIZACION</h3>
+            <p>
+                proyectos de identidad visual se ven limitados por archivos de baja resolución 
+                que se pixelan al intentar ampliarlos. 
+                Mi trabajo consiste en blindar 
+                la imagen de marca mediante una
+                 reconstrucción vectorial profesional, 
+                 transformando mapas de bits en estructuras 
+                 geométricas perfectas.
+
+En lugar de recurrir a calcos automáticos que 
+generan bordes irregulares, 
+realizo un redibujado manual 
+exhaustivo utilizando curvas de Bézier.
+            </p>
+              <a href="Trabajo.html" class="btn-proyecto">
+        Ver trabajo final
+    </a>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- SEGUNDO PROYECTO -->
+<section class="proyecto-destacado proyecto-invertido">
+
+    <div class="proyecto-contenedor">
+
+        <div class="proyecto-imagen">
+            <img src="imagenes/ctlyaki.jpeg" alt="Segundo Proyecto">
+        </div>
+
+        <div class="proyecto-texto">
+            <h3>CATALOGOS</h3>
+            <p>
+                Entiendo que un catálogo no es solo una galería
+                 de productos, sino una herramienta de ventas
+                  crítica. Por eso, mi enfoque combina 
+                  el diseño editorial tradicional con la 
+                  potencia de la Inteligencia Artificial 
+                  para crear piezas que capturan 
+                la atención y generan resultados comerciales.
+            </p>
+
+            <a href="Trabajo2.html" class="btn-proyecto">
+                Ver trabajo final
+            </a>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- TERCER PROYECTO -->
+<section class="proyecto-destacado proyecto-fondo-repetido">
+
+    <div class="proyecto-contenedor">
+
+        <div class="proyecto-imagen">
+            <img src="imagenes/Trabajo3.jpeg" alt="Tercer Proyecto">
+        </div>
+
+        <div class="proyecto-texto">
+            <h3>ARTES</h3>
+            <p>
+                Para este proyecto gráfico, mi objetivo principal fue crear
+                 piezas publicitarias donde el arte fuera el protagonista absoluto. 
+                 Diseñé una composición visual limpia que permitiera resaltar la calidad, el detalle y los colores 
+                vibrantes de los diseños faciales disponibles,
+                 haciendo que 'saltaran' a la vista.
+
+Al mismo tiempo, integré estratégicamente la 
+identidad de la marca y 
+la información de contacto. 
+No quería solo mostrar caras bonitas, 
+sino construir una imagen de servicio 
+profesional y confiable, facilitando el 
+camino para que el cliente final agende 
+para sus eventos.
+            </p>
+
+            <a href="Trabajo3.html" class="btn-proyecto">
+                Ver trabajo final
+            </a>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- CUARTO PROYECTO -->
+<section class="proyecto-destacado proyecto-invertido seccion-videos">
+
+    <div class="proyecto-contenedor">
+
+        <div class="proyecto-imagen">
+            <img src="imagenes/H.jpeg" alt="Cuarto Proyecto">
+        </div>
+
+        <div class="proyecto-texto">
+            <h3>VIDEOS</h3>
+            <p>
+En esta área trabajo la creación y edición de videos, cuidando cada detalle para que 
+el resultado se vea profesional y transmita exactamente lo que se quiere comunicar. Me gusta jugar con el ritmo, 
+la música y los efectos para que cada pieza tenga personalidad propia y conecte con quien la ve.
+            </p>
+
+            <a href="Trabajo4.html" class="btn-proyecto">
+                Ver trabajo final
+            </a>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- SECCION CONTACTO FINAL -->
+<section class="contacto-final">
+
+    <div class="contacto-contenedor">
+        <h2>CONTÁCTAME</h2>
+
+        <div class="contacto-iconos">
+            <a href="https://wa.me/50254645206" target="_blank">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+
+            <a href="https://www.instagram.com/linyck.18" target="_blank">
+                <i class="fab fa-instagram"></i>
+            </a>
+        </div>
+    </div>
+
+    <div class="contacto-extra">
+        <p>Si quieres saber más sobre mí</p>
+        <p>↓</p>
+        <a href="Massobremi.html" class="btn-contacto">Click aquí</a>
+    </div>
+
+</section>
+</section>
+
+
+</main>
+
+</body>
+</html>
