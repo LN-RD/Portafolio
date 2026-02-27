@@ -228,6 +228,65 @@ background-repeat: no-repeat;
     color: white;
     transform: scale(1.05);
 }
+
+/* SECCION PROYECTOS ACADEMICOS */
+.proyectos-academicos {
+    background-color: #556b2f; /* verde musgo */
+    padding: 50px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.academico-card {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 35px 50px;
+    border-radius: 20px;
+    text-align: center;
+    max-width: 600px;
+    width: 100%;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+
+    opacity: 0;
+    transform: translateY(40px);
+    animation: aparecerAcademico 1s ease forwards;
+}
+
+@keyframes aparecerAcademico {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.academico-card h3 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+}
+
+.academico-card p {
+    font-size: 1.05rem;
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+
+.btn-academico {
+    display: inline-block;
+    padding: 12px 35px;
+    background-color: #556b2f;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.btn-academico:hover {
+    background-color: #3d4f1c;
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 15px 25px rgba(0,0,0,0.3);
+}
+
 </style>
 </head>
 
@@ -373,6 +432,25 @@ la música y los efectos para que cada pieza tenga personalidad propia y conecte
             </a>
         </div>
 
+    </div>
+
+</section>
+
+
+<!-- PROYECTOS ACADEMICOS -->
+<section class="proyectos-academicos">
+
+    <div class="academico-card">
+        <h3>PROYECTOS ACADÉMICOS</h3>
+        <p>
+            Trabajos desarrollados durante mi formación universitaria, 
+            donde aplico fundamentos de diseño, creatividad estratégica 
+            y construcción visual profesional.
+        </p>
+
+        <a href="TrabajoU.html" class="btn-academico">
+            Ver
+        </a>
     </div>
 
 </section>

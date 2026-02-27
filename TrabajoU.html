@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Proyectos Académicos</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+
+<style>
+
+/* RESET */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body{
+    background-color:#f5f5f5;
+}
+
+/* HERO */
+.hero-academico{
+    height:45vh;
+    background-color:#556b2f;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:white;
+    text-align:center;
+}
+
+.hero-academico h1{
+    font-family:'Great Vibes', cursive;
+    font-size: clamp(3rem, 8vw, 5.5rem);
+    letter-spacing:3px;
+}
+
+/* SECCIONES */
+.seccion-academica{
+    padding:60px 20px;
+    display:flex;
+    justify-content:center;
+}
+
+.contenedor-academico{
+    max-width:950px;
+    width:100%;
+    display:flex;
+    gap:40px;
+    align-items:center;
+    justify-content:center;
+    flex-wrap:wrap;
+
+    opacity:0;
+    transform:translateY(30px);
+    animation:aparecer 1s ease forwards;
+}
+
+@keyframes aparecer{
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* IMAGEN Y AUDIO */
+.imagen-academica img,
+.imagen-academica audio{
+    width:380px;
+    max-width:100%;
+    border-radius:20px;
+    box-shadow:0 15px 40px rgba(0,0,0,0.15);
+    transition:0.4s ease;
+}
+
+.imagen-academica img:hover{
+    transform:scale(1.05);
+}
+
+/* TEXTO */
+.texto-academico{
+    max-width:480px;
+}
+
+.texto-academico h3{
+    font-size:1.9rem;
+    margin-bottom:15px;
+    color:#556b2f;
+    letter-spacing:1.5px;
+}
+
+.texto-academico p{
+    font-size:1rem;
+    line-height:1.7;
+    margin-bottom:20px;
+    color:#444;
+}
+
+/* BOTONES */
+.btn-ver,
+.btn-volver{
+    display:inline-block;
+    padding:10px 28px;
+    background-color:#556b2f;
+    color:white;
+    text-decoration:none;
+    border-radius:25px;
+    font-weight:bold;
+    transition:0.3s ease;
+}
+
+.btn-ver:hover,
+.btn-volver:hover{
+    background-color:#3d4f1c;
+    transform:translateY(-3px);
+    box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* BOTON VOLVER */
+.contenedor-volver{
+    text-align:center;
+    padding:60px 20px;
+}
+
+/* INVERTIR */
+.invertido{
+    flex-direction:row-reverse;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+    .contenedor-academico{
+        flex-direction:column;
+        text-align:center;
+        gap:25px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<section class="hero-academico">
+    <h1>Proyectos Académicos</h1>
+</section>
+
+<!-- PUBLICIDAD DIA DEL CARIÑO -->
+<section class="seccion-academica">
+    <div class="contenedor-academico">
+        <div class="imagen-academica">
+            <img src="imagenes/anuncio.png" alt="Publicidad Día del Cariño">
+        </div>
+        <div class="texto-academico">
+            <h3>Publicidad Día del Cariño</h3>
+            <p>
+                Desarrollo de pieza gráfica publicitaria diseñada para una campaña temática 
+                del Día del Cariño. El proyecto incluyó conceptualización creativa, selección 
+                estratégica de paleta cromática, jerarquización tipográfica y composición visual 
+                orientada a transmitir emoción y conexión con el público objetivo en medios digitales.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- CREACION DE LOGO -->
+<section class="seccion-academica">
+    <div class="contenedor-academico invertido">
+        <div class="imagen-academica">
+            <img src="imagenes/logopastel.jpeg" alt="Creación de Logo">
+        </div>
+        <div class="texto-academico">
+            <h3>Creación de Logo</h3>
+            <p>
+                Desarrollo integral de identidad visual partiendo de investigación conceptual, 
+                bocetaje inicial y construcción vectorial profesional. Se aplicaron principios 
+                de branding, equilibrio visual y coherencia gráfica, garantizando adaptabilidad 
+                en formatos digitales e impresos.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- SPOT RADIAL -->
+<section class="seccion-academica">
+    <div class="contenedor-academico">
+        <div class="imagen-academica">
+             <audio controls>
+                <source src="Audio/spot Nescafé.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+        <div class="texto-academico">
+            <h3>Spot Radial – Nescafé</h3>
+            <p>
+                Producción y edición de spot radial académico para la marca Nescafé, 
+                enfocado en la creación de guion persuasivo, storytelling estratégico, 
+                manejo profesional del tono de voz, ritmo narrativo y selección musical 
+                adecuada para generar recordación de marca y conexión emocional con la audiencia.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- BOTON VOLVER -->
+<div class="contenedor-volver">
+    <a href="index.html" class="btn-volver">Volver al inicio</a>
+</div>
+
+</body>
+</html>
